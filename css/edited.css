@@ -5,27 +5,58 @@
    Empty until you press "Save to project" in the editor. */
 
 
-/* ── Custom KD wedding monogram ─────────────────────────────── */
+/* ── Custom botanical KD monogram ─────────────────────────── */
 
 .monogram {
-  width: 7rem;
-  height: 7rem;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  font-family: var(--font-display);
-  font-size: 4.8rem;
+  font-family: var(--font-script);
+  font-size: 4.6rem;
   line-height: 1;
   letter-spacing: -0.12em;
+  animation: appear 1.8s ease both;
+}
+
+/* Decorative outer botanical ring */
+.monogram::before {
+  content: "❧  ❀  ❧  ❀  ❧";
+  position: absolute;
+  inset: -0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.35rem;
+  transform: rotate(-8deg);
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+/* Second curved botanical layer */
+.monogram::after {
+  content: "⌒  ❧     ❧  ⌒";
+  position: absolute;
+  inset: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  transform: rotate(180deg);
+  color: var(--ink);
+  opacity: 0.85;
 }
 
 .monogram .mono-a,
 .monogram .mono-b {
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: var(--font-script);
   font-size: 1em;
   font-weight: 400;
   position: relative;
@@ -37,6 +68,6 @@
 
 .monogram .mono-b {
   z-index: 1;
-  margin-left: -0.8rem;
-  top: 0.25rem;
+  margin-left: -0.75rem;
+  top: 0.35rem;
 }
