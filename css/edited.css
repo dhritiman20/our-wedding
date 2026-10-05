@@ -5,41 +5,77 @@
    Empty until you press "Save to project" in the editor. */
 
 
-/* ── KD monogram ───────────────────────────────────────── */
+/* ── Botanical KD monogram ─────────────────────────────── */
 
 .monogram {
-  width: 8rem;
-  height: 8rem;
-  border: 1.5px solid var(--ink);
-  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--font-script);
+  line-height: 1;
+  z-index: 1;
+}
+
+/* Botanical wreath */
+.monogram::before {
+  content: "❦  ❀  ❦  ❀  ❦";
+  position: absolute;
+  inset: -0.35rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  border: 2px solid #6f7f55;
+  border-radius: 50%;
+  color: #6f7f55;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.45rem;
+  transform: rotate(-8deg);
   box-sizing: border-box;
-  font-family: var(--font-script);
-  font-size: 4.5rem;
-  line-height: 1;
-  letter-spacing: -0.35rem;
 }
 
-/* Both initials use the same original cursive font */
+/* Additional leafy decoration */
+.monogram::after {
+  content: "❧       ❧";
+  position: absolute;
+  inset: -0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem;
+  color: #6f7f55;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+/* Initials */
 .monogram .mono-a,
 .monogram .mono-b {
-  display: inline-block;
+  display: block;
   position: relative;
   font-family: var(--font-script);
-  font-size: 4.5rem;
   font-weight: 400;
-  line-height: 1;
-}
-
-.monogram .mono-a {
+  line-height: 0.85;
+  letter-spacing: 0;
   z-index: 2;
 }
 
+/* K above */
+.monogram .mono-a {
+  font-size: 3.6rem;
+  margin-bottom: -0.15rem;
+}
+
+/* D below */
 .monogram .mono-b {
-  z-index: 1;
-  margin-left: -0.45rem;
+  font-size: 3.6rem;
+  margin-left: 0;
   top: 0;
 }
