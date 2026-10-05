@@ -7,48 +7,42 @@
 /* ── Botanical KD monogram ─────────────────────────────── */
 
 .monogram {
-  width: 9rem;
-  height: 9rem;
+  width: 10rem;
+  height: 10rem;
   position: relative;
   display: block;
   box-sizing: border-box;
   font-family: var(--font-script);
   line-height: 1;
-  z-index: 1;
 }
 
-/* Outer botanical wreath */
-.monogram::before {
-  content: "❧   ❀   ❧   ❀   ❧";
+/* Botanical wreath */
+.monogram-wreath {
   position: absolute;
-  inset: -0.7rem;
-  width: 10.4rem;
-  height: 10.4rem;
-  border: 1.5px solid #6f7f55;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6f7f55;
-  font-family: Georgia, serif;
-  font-size: 1.15rem;
-  letter-spacing: 0.35rem;
-  transform: rotate(-10deg);
-  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  overflow: visible;
+  color: #71845a;
 }
 
-/* Leaves / flowers placed around the OUTSIDE */
-.monogram::after {
-  content: "❧        ❧";
-  position: absolute;
-  inset: -1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #6f7f55;
-  font-family: Georgia, serif;
-  font-size: 2rem;
-  pointer-events: none;
+/* Curved olive branches */
+.wreath-branch {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Leaves */
+.wreath-leaves {
+  fill: currentColor;
+  opacity: 0.95;
+}
+
+/* Flowers */
+.wreath-flower {
+  fill: currentColor;
 }
 
 /* Initials */
@@ -66,18 +60,13 @@
 /* K — upper left */
 .monogram .mono-a {
   font-size: 4rem;
-  top: 1.8rem;
-  left: 2.25rem;
+  top: 2.15rem;
+  left: 3.0rem;
 }
 
 /* D — lower right */
 .monogram .mono-b {
   font-size: 4rem;
-  top: 3.6rem;
-  left: 3.8rem;
+  top: 4.15rem;
+  left: 4.35rem;
 }
-
-Your HTML remains:
-<div class="monogram" aria-hidden="true">
-  <span class="mono-a">K</span><span class="mono-b">D</span>
-</div>
