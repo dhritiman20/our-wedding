@@ -12,91 +12,63 @@
   display: block !important;
   border: none !important;
   border-radius: 0 !important;
-  box-sizing: border-box !important;
   overflow: visible !important;
 }
-
-
-/* ─────────────────────────────────────────
-   BOTANICAL WREATH
-   ───────────────────────────────────────── */
-
-.monogram-wreath {
-  position: absolute !important;
-  width: 100% !important;
-  height: 100% !important;
-  top: 0 !important;
-  left: 0 !important;
-  overflow: visible !important;
-  z-index: 1 !important;
-}
-
-
-/* Curved branches */
-
-.wreath-branch {
-  fill: none !important;
-  stroke: #71845a !important;
-  stroke-width: 2.2 !important;
-  stroke-linecap: round !important;
-}
-
-
-/* Leaves */
-
-.wreath-leaves {
-  fill: #71845a !important;
-  stroke: none !important;
-}
-
-
-/* Flowers */
-
-.wreath-flower {
-  fill: #71845a !important;
-  stroke: none !important;
-}
-
-
-/* ─────────────────────────────────────────
-   INITIALS
-   ───────────────────────────────────────── */
-
-.monogram .mono-a,
-.monogram .mono-b {
-  position: absolute !important;
-  display: block !important;
-  font-family: var(--font-script) !important;
-  font-weight: 400 !important;
-  line-height: 1 !important;
-  letter-spacing: 0 !important;
-  color: var(--ink) !important;
-  z-index: 5 !important;
-}
-
-
-/* K — upper left */
-
-.monogram .mono-a {
-  font-size: 4rem !important;
-  top: 2.2rem !important;
-  left: 3.1rem !important;
-}
-
-
-/* D — lower right */
-
-.monogram .mono-b {
-  font-size: 4rem !important;
-  top: 4.25rem !important;
-  left: 4.55rem !important;
-}
-
-
-/* Remove ALL old decorative pseudo-elements */
 
 .monogram::before,
 .monogram::after {
   content: none !important;
   display: none !important;
+}
+
+.monogram-wreath {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+  z-index: 1 !important;
+}
+
+/* Circular branch */
+.wreath-branch {
+  fill: none !important;
+  stroke: #71845a !important;
+  stroke-width: 2 !important;
+}
+
+/* Pointed leaves */
+.wreath-leaves {
+  fill: #71845a !important;
+}
+
+/* Flowers */
+.wreath-flower {
+  fill: #71845a !important;
+}
+
+/* K */
+.monogram .mono-a {
+  position: absolute !important;
+  display: block !important;
+  z-index: 5 !important;
+  font-family: var(--font-script) !important;
+  font-size: 4rem !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  top: 2.2rem !important;
+  left: 3rem !important;
+}
+
+/* D */
+.monogram .mono-b {
+  position: absolute !important;
+  display: block !important;
+  z-index: 5 !important;
+  font-family: var(--font-script) !important;
+  font-size: 4rem !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  top: 4.25rem !important;
+  left: 4.45rem !important;
 }
