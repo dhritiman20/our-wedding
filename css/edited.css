@@ -5,61 +5,33 @@
    Empty until you press "Save to project" in the editor. */
 
 
-/* ── Custom botanical KD monogram ─────────────────────────── */
+/* ── KD monogram ───────────────────────────────────────── */
 
 .monogram {
   width: 8rem;
   height: 8rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-sizing: border-box;
   font-family: var(--font-script);
-  font-size: 4.6rem;
+  font-size: 4.5rem;
   line-height: 1;
-  letter-spacing: -0.12em;
-  animation: appear 1.8s ease both;
+  letter-spacing: -0.35rem;
 }
 
-/* Decorative outer botanical ring */
-.monogram::before {
-  content: "❧  ❀  ❧  ❀  ❧";
-  position: absolute;
-  inset: -0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, serif;
-  font-size: 1.15rem;
-  letter-spacing: 0.35rem;
-  transform: rotate(-8deg);
-  color: var(--ink);
-  opacity: 0.9;
-}
-
-/* Second curved botanical layer */
-.monogram::after {
-  content: "⌒  ❧     ❧  ⌒";
-  position: absolute;
-  inset: -1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, serif;
-  font-size: 1.8rem;
-  letter-spacing: 0.2rem;
-  transform: rotate(180deg);
-  color: var(--ink);
-  opacity: 0.85;
-}
-
+/* Both initials use the same original cursive font */
 .monogram .mono-a,
 .monogram .mono-b {
   display: inline-block;
-  font-family: var(--font-script);
-  font-size: 1em;
-  font-weight: 400;
   position: relative;
+  font-family: var(--font-script);
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .monogram .mono-a {
@@ -68,6 +40,6 @@
 
 .monogram .mono-b {
   z-index: 1;
-  margin-left: -0.75rem;
-  top: 0.35rem;
+  margin-left: -0.45rem;
+  top: 0;
 }
