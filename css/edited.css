@@ -3,3 +3,40 @@
    even if a future export were incomplete.
 
    Empty until you press "Save to project" in the editor. */
+
+
+/* ── Custom KD wedding monogram ─────────────────────────────── */
+
+.monogram {
+  width: 7rem;
+  height: 7rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  line-height: 1;
+  letter-spacing: -0.12em;
+}
+
+.monogram .mono-a,
+.monogram .mono-b {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1em;
+  font-weight: 400;
+  position: relative;
+}
+
+.monogram .mono-a {
+  z-index: 2;
+}
+
+.monogram .mono-b {
+  z-index: 1;
+  margin-left: -0.8rem;
+  top: 0.25rem;
+}
