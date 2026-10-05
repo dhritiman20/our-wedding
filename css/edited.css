@@ -4,78 +4,80 @@
 
    Empty until you press "Save to project" in the editor. */
 
-
 /* ── Botanical KD monogram ─────────────────────────────── */
 
 .monogram {
   width: 9rem;
   height: 9rem;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: block;
   box-sizing: border-box;
   font-family: var(--font-script);
   line-height: 1;
   z-index: 1;
 }
 
-/* Botanical wreath */
+/* Outer botanical wreath */
 .monogram::before {
-  content: "❦  ❀  ❦  ❀  ❦";
+  content: "❧   ❀   ❧   ❀   ❧";
   position: absolute;
-  inset: -0.35rem;
+  inset: -0.7rem;
+  width: 10.4rem;
+  height: 10.4rem;
+  border: 1.5px solid #6f7f55;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #6f7f55;
-  border-radius: 50%;
   color: #6f7f55;
   font-family: Georgia, serif;
   font-size: 1.15rem;
-  letter-spacing: 0.45rem;
-  transform: rotate(-8deg);
+  letter-spacing: 0.35rem;
+  transform: rotate(-10deg);
   box-sizing: border-box;
 }
 
-/* Additional leafy decoration */
+/* Leaves / flowers placed around the OUTSIDE */
 .monogram::after {
-  content: "❧       ❧";
+  content: "❧        ❧";
   position: absolute;
-  inset: -0.55rem;
+  inset: -1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem;
   color: #6f7f55;
   font-family: Georgia, serif;
   font-size: 2rem;
-  box-sizing: border-box;
   pointer-events: none;
 }
 
 /* Initials */
 .monogram .mono-a,
 .monogram .mono-b {
+  position: absolute;
   display: block;
-  position: relative;
   font-family: var(--font-script);
   font-weight: 400;
-  line-height: 0.85;
+  line-height: 1;
   letter-spacing: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
-/* K above */
+/* K — upper left */
 .monogram .mono-a {
-  font-size: 3.6rem;
-  margin-bottom: -0.15rem;
+  font-size: 4rem;
+  top: 1.8rem;
+  left: 2.25rem;
 }
 
-/* D below */
+/* D — lower right */
 .monogram .mono-b {
-  font-size: 3.6rem;
-  margin-left: 0;
-  top: 0;
+  font-size: 4rem;
+  top: 3.6rem;
+  left: 3.8rem;
 }
+
+Your HTML remains:
+<div class="monogram" aria-hidden="true">
+  <span class="mono-a">K</span><span class="mono-b">D</span>
+</div>
