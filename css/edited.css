@@ -1,17 +1,15 @@
-/* Custom wedding monogram */
-
-
-/* ─────────────────────────────────────────
-   MONOGRAM CONTAINER
-   ───────────────────────────────────────── */
+/* ── KD botanical monogram ─────────────────────────────── */
 
 .monogram {
   width: 11rem !important;
   height: 11rem !important;
   position: relative !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   border: none !important;
   border-radius: 0 !important;
+  box-sizing: border-box !important;
   overflow: visible !important;
 }
 
@@ -21,54 +19,11 @@
   display: none !important;
 }
 
-.monogram-wreath {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: visible !important;
-  z-index: 1 !important;
-}
-
-/* Circular branch */
-.wreath-branch {
-  fill: none !important;
-  stroke: #71845a !important;
-  stroke-width: 2 !important;
-}
-
-/* Pointed leaves */
-.wreath-leaves {
-  fill: #71845a !important;
-}
-
-/* Flowers */
-.wreath-flower {
-  fill: #71845a !important;
-}
-
-/* K */
-.monogram .mono-a {
-  position: absolute !important;
+.monogram-image {
   display: block !important;
-  z-index: 5 !important;
-  font-family: var(--font-script) !important;
-  font-size: 4rem !important;
-  font-weight: 400 !important;
-  line-height: 1 !important;
-  top: 2.2rem !important;
-  left: 3rem !important;
-}
-
-/* D */
-.monogram .mono-b {
-  position: absolute !important;
-  display: block !important;
-  z-index: 5 !important;
-  font-family: var(--font-script) !important;
-  font-size: 4rem !important;
-  font-weight: 400 !important;
-  line-height: 1 !important;
-  top: 4.25rem !important;
-  left: 4.45rem !important;
+  width: 11rem !important;
+  height: 11rem !important;
+  object-fit: contain !important;
+  border: none !important;
+  border-radius: 0 !important;
 }
