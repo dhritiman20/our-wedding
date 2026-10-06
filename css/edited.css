@@ -1,8 +1,8 @@
 /* ── KD botanical monogram ─────────────────────────────── */
 
 .monogram {
-  width: 11rem !important;
-  height: 11rem !important;
+  width: 16.5rem !important;
+  height: 16.5rem !important;
   position: relative !important;
   display: flex !important;
   align-items: center !important;
@@ -11,6 +11,7 @@
   border-radius: 0 !important;
   box-sizing: border-box !important;
   overflow: visible !important;
+  margin-bottom: 1rem !important;
 }
 
 .monogram::before,
@@ -21,8 +22,8 @@
 
 .monogram-image {
   display: block !important;
-  width: 11rem !important;
-  height: 11rem !important;
+  width: 16.5rem !important;
+  height: 16.5rem !important;
   object-fit: contain !important;
   border: none !important;
   border-radius: 0 !important;
