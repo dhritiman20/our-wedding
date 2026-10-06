@@ -1,5 +1,14 @@
-/* ── KD botanical monogram ─────────────────────────────── */
+/* ── HERO: centered vertical layout ───────────────────────── */
 
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* KD botanical emblem */
 .monogram {
   width: 16.5rem !important;
   height: 16.5rem !important;
@@ -11,7 +20,8 @@
   border-radius: 0 !important;
   box-sizing: border-box !important;
   overflow: visible !important;
-  margin-bottom: 1rem !important;
+  margin: 0 auto 1rem auto !important;
+  flex: none !important;
 }
 
 .monogram::before,
@@ -27,4 +37,26 @@
   object-fit: contain !important;
   border: none !important;
   border-radius: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Names directly underneath emblem */
+.hero h1 {
+  position: static !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+/* Date directly underneath names */
+.hero .hero-date {
+  position: static !important;
+  margin: 0.7rem 0 0 !important;
+  text-align: center !important;
+}
+
+/* Stop the template's moving/vertical decorative line */
+.hero::before,
+.hero::after {
+  display: none !important;
+  content: none !important;
 }
