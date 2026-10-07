@@ -133,3 +133,247 @@ footer {
   position: relative;
   z-index: 1;
 }
+/* ── WEDDING BACKGROUND ANIMATION ───────────────────────── */
+
+/* Keep decorative animation behind the invitation */
+.ambient-particles,
+.floating-leaves,
+.light-sweep {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Floating leaves ─────────────────────────────────────── */
+
+.floating-leaves {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.leaf {
+  position: absolute;
+  display: block;
+  width: 13px;
+  height: 27px;
+  background: rgba(105, 104, 55, 0.30);
+  border-radius: 100% 0 100% 0;
+  transform-origin: center bottom;
+  opacity: 0;
+}
+
+/* Each leaf follows a different path and timing */
+
+.leaf-1 {
+  left: 12%;
+  top: 18%;
+  animation: leafDrift1 18s ease-in-out infinite;
+}
+
+.leaf-2 {
+  left: 82%;
+  top: 28%;
+  width: 10px;
+  height: 22px;
+  animation: leafDrift2 23s ease-in-out 4s infinite;
+}
+
+.leaf-3 {
+  left: 24%;
+  top: 72%;
+  width: 11px;
+  height: 24px;
+  animation: leafDrift3 20s ease-in-out 7s infinite;
+}
+
+.leaf-4 {
+  left: 73%;
+  top: 67%;
+  width: 9px;
+  height: 20px;
+  animation: leafDrift4 25s ease-in-out 2s infinite;
+}
+
+.leaf-5 {
+  left: 48%;
+  top: 12%;
+  width: 8px;
+  height: 18px;
+  animation: leafDrift5 27s ease-in-out 10s infinite;
+}
+
+@keyframes leafDrift1 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(25deg);
+  }
+
+  15% {
+    opacity: 0.28;
+  }
+
+  50% {
+    opacity: 0.20;
+    transform: translate(45px, 75px) rotate(105deg);
+  }
+
+  85% {
+    opacity: 0.08;
+  }
+}
+
+@keyframes leafDrift2 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-20deg);
+  }
+
+  18% {
+    opacity: 0.24;
+  }
+
+  55% {
+    opacity: 0.16;
+    transform: translate(-55px, 95px) rotate(-110deg);
+  }
+
+  88% {
+    opacity: 0;
+  }
+}
+
+@keyframes leafDrift3 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(40deg);
+  }
+
+  20% {
+    opacity: 0.25;
+  }
+
+  55% {
+    opacity: 0.17;
+    transform: translate(60px, -65px) rotate(140deg);
+  }
+
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes leafDrift4 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-35deg);
+  }
+
+  18% {
+    opacity: 0.22;
+  }
+
+  55% {
+    opacity: 0.15;
+    transform: translate(-70px, -80px) rotate(-125deg);
+  }
+
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes leafDrift5 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(15deg);
+  }
+
+  20% {
+    opacity: 0.20;
+  }
+
+  55% {
+    opacity: 0.12;
+    transform: translate(-30px, 100px) rotate(90deg);
+  }
+
+  90% {
+    opacity: 0;
+  }
+}
+
+
+/* ── Very faint golden light sweep ───────────────────────── */
+
+.light-sweep {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.light-sweep::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -30%;
+  width: 35%;
+  height: 140%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(196, 165, 82, 0.045),
+    transparent
+  );
+  transform: rotate(12deg);
+  animation: lightSweep 20s ease-in-out infinite;
+}
+
+@keyframes lightSweep {
+  0%, 70% {
+    left: -35%;
+    opacity: 0;
+  }
+
+  76% {
+    opacity: 1;
+  }
+
+  90% {
+    left: 115%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+
+/* ── Three-line names ────────────────────────────────────── */
+
+.hero h1,
+.hero-names h1 {
+  font-family: "Darleston" !important;
+  font-size: 90px !important;
+  font-weight: normal !important;
+  line-height: 0.88 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.hero h1 .name-line {
+  display: block;
+}
+
+.hero h1 .amp {
+  display: block !important;
+  font-family: "Darleston" !important;
+  font-size: 0.48em !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  margin: 0.08em 0 0.04em !important;
+  position: static !important;
+  text-transform: none !important;
+}
