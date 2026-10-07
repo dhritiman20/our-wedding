@@ -77,3 +77,59 @@
   margin: 0 !important;
   text-align: center !important;
 }
+/* ── SUBTLE ANIMATED BACKGROUND ───────────────────────── */
+
+.ambient-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-particles::before,
+.ambient-particles::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image:
+    radial-gradient(circle, rgba(170, 145, 70, 0.28) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(170, 145, 70, 0.18) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(170, 145, 70, 0.22) 1.2px, transparent 1.7px);
+  background-size: 140px 140px, 190px 190px, 240px 240px;
+  background-position: 20px 30px, 80px 100px, 140px 60px;
+  opacity: 0.45;
+  animation: ambientDrift 28s linear infinite;
+}
+
+.ambient-particles::after {
+  opacity: 0.25;
+  transform: scale(1.15);
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+
+@keyframes ambientDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(18px, -25px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Keep all actual invitation content above the particles */
+.hero,
+.story,
+.countdown,
+.schedule,
+.gallery,
+footer {
+  position: relative;
+  z-index: 1;
+}
