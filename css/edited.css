@@ -1,5 +1,11 @@
 /* ── HERO: centered vertical layout ───────────────────────── */
 
+@font-face {
+  font-family: "Darleston";
+  src: url("../assets/fonts/Darleston.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 .hero {
   display: flex !important;
   flex-direction: column !important;
