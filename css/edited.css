@@ -448,3 +448,54 @@ footer {
   position: relative;
   z-index: 1 !important;
 }
+
+/* ── BOTANICAL CORNER DECORATIONS ─────────────────────── */
+
+.botanical-corner {
+  position: fixed;
+  width: clamp(150px, 25vw, 340px);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.92;
+}
+
+.botanical-top-left {
+  top: 0;
+  left: 0;
+}
+
+.botanical-top-right {
+  top: 0;
+  right: 0;
+}
+
+.botanical-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.botanical-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Smaller corners on phones */
+@media (max-width: 600px) {
+  .botanical-corner {
+    width: 36vw;
+    opacity: 0.82;
+  }
+}
+
+/* Keep invitation text and content above the decorations */
+.hero,
+.story,
+.countdown,
+.schedule,
+.gallery,
+footer {
+  position: relative;
+  z-index: 1;
+}
