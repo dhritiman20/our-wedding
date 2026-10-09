@@ -533,3 +533,19 @@ footer {
   animation: flow 2.4s ease-in-out infinite !important;
 }
 
+/* Move the complete star-and-dash ornament below the date */
+
+.scroll-hint {
+  bottom: -2rem !important;
+}
+
+/* Keep the vertical animation centered and black */
+.scroll-hint {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: transparent !important;
+}
+
+.scroll-hint span {
+  background: #242019 !important;
+}
