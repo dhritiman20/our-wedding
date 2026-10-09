@@ -511,3 +511,25 @@ footer {
   position: relative;
   z-index: 1;
 }
+/* Restore the original centered vertical scroll animation */
+
+.scroll-hint {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 1.5rem !important;
+  transform: translateX(-50%) !important;
+  display: block !important;
+  width: 1px !important;
+  height: 4rem !important;
+  margin: 0 !important;
+  z-index: 5 !important;
+}
+
+.scroll-hint span {
+  display: block !important;
+  width: 1px !important;
+  height: 100% !important;
+  background: var(--ink) !important;
+  animation: flow 2.4s ease-in-out infinite !important;
+}
+
