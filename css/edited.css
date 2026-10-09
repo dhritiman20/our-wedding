@@ -449,13 +449,18 @@ footer {
   z-index: 1 !important;
 }
 
-/* ── BOTANICAL CORNER DECORATIONS ─────────────────────── */
+/* ── BOTANICAL CORNER DECORATIONS ───────────────── */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
 
 .botanical-corner {
-  position: fixed;
+  position: absolute;
   width: clamp(150px, 25vw, 340px);
   height: auto;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   user-select: none;
   opacity: 0.92;
@@ -479,6 +484,13 @@ footer {
 .botanical-bottom-right {
   bottom: 0;
   right: 0;
+}
+
+@media (max-width: 600px) {
+  .botanical-corner {
+    width: 36vw;
+    opacity: 0.82;
+  }
 }
 
 /* Smaller corners on phones */
