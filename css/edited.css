@@ -549,3 +549,34 @@ footer {
 .scroll-hint span {
   background: #242019 !important;
 }
+
+/* Star-and-dash ornament below the wedding date */
+.date-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.1rem auto 0;
+  color: #242019;
+  width: 10rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ornament-line {
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: #242019;
+}
+
+.ornament-star {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Keep the existing vertical animation centered below the ornament */
+.scroll-hint {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
