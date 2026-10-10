@@ -453,7 +453,7 @@ footer {
 
 .botanical-corner {
   position: fixed;
-  width: clamp(150px, 25vw, 340px);
+  width: clamp(130px, 22vw, 300px);
   height: auto;
   z-index: 10;
   pointer-events: none;
