@@ -462,25 +462,24 @@ footer {
 }
 
 .botanical-top-left {
-  top: 0;
-  left: 0;
+  top: 8px;
+  left: 8px;
 }
 
 .botanical-top-right {
-  top: 0;
-  right: 0;
+  top: 8px;
+  right: 8px;
 }
 
 .botanical-bottom-left {
-  bottom: 0;
-  left: 0;
+  bottom: 8px;
+  left: 8px;
 }
 
 .botanical-bottom-right {
-  bottom: 0;
-  right: 0;
+  bottom: 8px;
+  right: 8px;
 }
-
 @media (max-width: 600px) {
   .botanical-corner {
     width: 30vw;
