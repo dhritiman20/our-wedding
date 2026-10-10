@@ -580,3 +580,12 @@ footer {
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
+
+/* Remove the animated vertical scroll line */
+.scroll-hint {
+  display: none !important;
+}
+
+.scroll-hint span {
+  display: none !important;
+}
