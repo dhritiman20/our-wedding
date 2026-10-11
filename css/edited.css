@@ -630,3 +630,20 @@ footer {
     bottom: 14px !important;
   }
 }
+
+/* New single-image botanical frame */
+.botanical-frame {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Hide the four old corner images */
+.botanical-corner {
+  display: none !important;
+}
