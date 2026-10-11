@@ -583,3 +583,50 @@ footer {
 .scroll-hint span {
   display: none !important;
 }
+/* Fix clipped botanical corner artwork */
+
+.botanical-corner {
+  width: clamp(180px, 19vw, 270px) !important;
+  max-width: none !important;
+  height: auto !important;
+  opacity: 0.92;
+}
+
+/* Pull the top corners inward and down */
+.botanical-top-left {
+  top: 12px !important;
+  left: 12px !important;
+}
+
+.botanical-top-right {
+  top: 12px !important;
+  right: 12px !important;
+}
+
+/* Pull the bottom corners inward and up */
+.botanical-bottom-left {
+  bottom: 18px !important;
+  left: 12px !important;
+}
+
+.botanical-bottom-right {
+  bottom: 18px !important;
+  right: 12px !important;
+}
+
+/* Keep all foliage visible on smaller screens */
+@media (max-width: 600px) {
+  .botanical-corner {
+    width: 29vw !important;
+  }
+
+  .botanical-top-left,
+  .botanical-top-right {
+    top: 10px !important;
+  }
+
+  .botanical-bottom-left,
+  .botanical-bottom-right {
+    bottom: 14px !important;
+  }
+}
