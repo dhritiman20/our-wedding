@@ -558,3 +558,26 @@ body::before {
   animation: leafDrift1 22s ease-in-out 12s infinite;
 }
 
+
+/* More varied drift for the additional golden leaves */
+
+.leaf-6 {
+  animation: leafDrift3 21s ease-in-out 3s infinite;
+}
+
+.leaf-7 {
+  animation: leafDrift5 24s ease-in-out 6s infinite;
+}
+
+.leaf-8 {
+  animation: leafDrift1 19s ease-in-out 9s infinite;
+}
+
+.leaf-9 {
+  animation: leafDrift2 26s ease-in-out 5s infinite;
+}
+
+.leaf-10 {
+  animation: leafDrift4 22s ease-in-out 12s infinite;
+}
+
