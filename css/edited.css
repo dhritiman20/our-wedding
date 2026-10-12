@@ -1,88 +1,54 @@
-/* ── HERO: centered vertical layout ───────────────────────── */
 
+/* =========================================================
+   WEDDING INVITATION — CUSTOM STYLES
+   ========================================================= */
+
+/* Darleston calligraphy font */
 @font-face {
   font-family: "Darleston";
   src: url("../assets/fonts/Darleston.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
-.hero {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
+
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+html {
+  min-height: 100%;
 }
 
-/* KD botanical emblem */
-.monogram {
-  width: 16.5rem !important;
-  height: 16.5rem !important;
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-sizing: border-box !important;
-  overflow: visible !important;
-  margin: 0 auto 1rem auto !important;
-  flex: none !important;
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f4ecd9 !important;
 }
 
-.monogram::before,
-.monogram::after {
-  content: none !important;
-  display: none !important;
+body::before {
+  opacity: 0.35 !important;
 }
 
-.monogram-image {
-  display: block !important;
-  width: 16.5rem !important;
-  height: 16.5rem !important;
-  object-fit: contain !important;
-  border: none !important;
-  border-radius: 0 !important;
-  margin: 0 auto !important;
+/* The wrapper contains every section and the four corners */
+.invitation-page {
+  position: relative;
+  min-height: 100vh;
 }
 
-/* Names directly underneath emblem */
-.hero h1 {
-  position: static !important;
-  margin: 0 !important;
-  text-align: center !important;
-}
+/* =========================================================
+   BACKGROUND ANIMATIONS
+   These remain fixed to the screen intentionally.
+   ========================================================= */
 
-/* Date directly underneath names */
-.hero .hero-date {
-  position: static !important;
-  margin: 0.7rem 0 0 !important;
-  text-align: center !important;
-}
-
-/* Stop the template's moving/vertical decorative line */
-.hero::before,
-.hero::after {
-  display: none !important;
-  content: none !important;
-}
-.hero h1,
-.hero-names h1 {
-  font-family: "Darleston" !important;
-  font-size: 90px !important;
-  font-weight: normal !important;
-  line-height: 1.1 !important;
-  letter-spacing: 0.04em !important;
-  text-transform: none !important;
-  margin: 0 !important;
-  text-align: center !important;
-}
-/* ── SUBTLE ANIMATED BACKGROUND ───────────────────────── */
-
-.ambient-particles {
+.ambient-particles,
+.floating-leaves,
+.light-sweep {
   position: fixed;
   inset: 0;
   pointer-events: none;
+}
+
+.ambient-particles {
   z-index: 0;
   overflow: hidden;
 }
@@ -93,9 +59,21 @@
   position: absolute;
   inset: -20%;
   background-image:
-    radial-gradient(circle, rgba(170, 145, 70, 0.28) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(170, 145, 70, 0.18) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(170, 145, 70, 0.22) 1.2px, transparent 1.7px);
+    radial-gradient(
+      circle,
+      rgba(170, 145, 70, 0.28) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(170, 145, 70, 0.18) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(170, 145, 70, 0.22) 1.2px,
+      transparent 1.7px
+    );
   background-size: 140px 140px, 190px 190px, 240px 240px;
   background-position: 20px 30px, 80px 100px, 140px 60px;
   opacity: 0.45;
@@ -110,41 +88,16 @@
 }
 
 @keyframes ambientDrift {
-  0% {
+  0%, 100% {
     transform: translate3d(0, 0, 0);
   }
 
   50% {
     transform: translate3d(18px, -25px, 0);
   }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
 }
 
-/* Keep all actual invitation content above the particles */
-.hero,
-.story,
-.countdown,
-.schedule,
-.gallery,
-footer {
-  position: relative;
-  z-index: 1;
-}
-/* ── WEDDING BACKGROUND ANIMATION ───────────────────────── */
-
-/* Keep decorative animation behind the invitation */
-.ambient-particles,
-.floating-leaves,
-.light-sweep {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-}
-
-/* ── Floating leaves ─────────────────────────────────────── */
+/* Floating leaves */
 
 .floating-leaves {
   z-index: 0;
@@ -156,13 +109,11 @@ footer {
   display: block;
   width: 13px;
   height: 27px;
-  background: rgba(105, 104, 55, 0.30);
+  background: rgba(105, 104, 55, 0.24);
   border-radius: 100% 0 100% 0;
   transform-origin: center bottom;
   opacity: 0;
 }
-
-/* Each leaf follows a different path and timing */
 
 .leaf-1 {
   left: 12%;
@@ -302,8 +253,7 @@ footer {
   }
 }
 
-
-/* ── Very faint golden light sweep ───────────────────────── */
+/* Subtle golden light sweep */
 
 .light-sweep {
   z-index: 0;
@@ -337,67 +287,100 @@ footer {
     opacity: 1;
   }
 
-  90% {
-    left: 115%;
-    opacity: 0;
-  }
-
-  100% {
+  90%, 100% {
     left: 115%;
     opacity: 0;
   }
 }
 
+/* =========================================================
+   CONTENT LAYERING
+   ========================================================= */
 
-/* ── Three-line names ────────────────────────────────────── */
+.hero,
+.story,
+.countdown,
+.schedule,
+.gallery,
+.quote,
+.footer {
+  position: relative;
+  z-index: 3;
+}
 
-.hero h1,
-.hero-names h1 {
-  font-family: "Darleston" !important;
-  font-size: 90px !important;
-  font-weight: normal !important;
-  line-height: 0.88 !important;
-  letter-spacing: 0.04em !important;
-  text-transform: none !important;
-  margin: 0 !important;
+/* =========================================================
+   HERO AND MONOGRAM
+   ========================================================= */
+
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center !important;
 }
 
+.monogram {
+  width: 16.5rem !important;
+  height: 16.5rem !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  margin: 0 auto 1rem auto !important;
+  flex: none !important;
+}
+
+.monogram::before,
+.monogram::after {
+  content: none !important;
+  display: none !important;
+}
+
+.monogram-image {
+  display: block !important;
+  width: 16.5rem !important;
+  height: 16.5rem !important;
+  object-fit: contain !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Names */
+
+.hero h1,
+.hero-names h1 {
+  position: static !important;
+  font-family: "Darleston" !important;
+  font-size: clamp(3.25rem, 6vw, 5.625rem) !important;
+  font-weight: normal !important;
+  line-height: 0.9 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
 .hero h1 .name-line {
-  display: block;
+  display: block !important;
 }
 
 .hero h1 .amp {
   display: block !important;
-  font-family: "Darleston" !important;
-  font-size: 0.48em !important;
-  line-height: 1.25 !important;
-  letter-spacing: 0 !important;
-  margin: 0.08em 0 0.04em !important;
   position: static !important;
+  font-family: "Darleston" !important;
+  font-size: 42px !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  margin: 8px 0 5px !important;
   text-transform: none !important;
 }
 
-/* ── FINAL HERO / BACKGROUND CORRECTIONS ───────────────────── */
-
-/* Warm parchment background */
-body {
-  background-color: #f4ecd9 !important;
-}
-
-/* Make the existing paper texture warmer and softer */
-body::before {
-  opacity: 0.35 !important;
-}
-
-/* Keep decorative animation behind all invitation content */
-.ambient-particles,
-.floating-leaves,
-.light-sweep {
-  z-index: 0 !important;
-}
-
-/* Remove ALL decorative lines around the ampersand */
 .hero .amp::before,
 .hero .amp::after,
 .hero-names .amp::before,
@@ -406,145 +389,16 @@ body::before {
   display: none !important;
 }
 
-/* Clean three-line name arrangement */
-.hero h1,
-.hero-names h1 {
-  font-family: "Darleston" !important;
-  font-size: 90px !important;
-  font-weight: normal !important;
-  line-height: 0.9 !important;
-  letter-spacing: 0.04em !important;
-  text-transform: none !important;
+/* Wedding date */
+
+.hero .hero-date {
+  position: static !important;
+  margin: 0.7rem 0 0 !important;
   text-align: center !important;
 }
 
-.hero h1 .name-line {
-  display: block !important;
-}
+/* Horizontal star ornament */
 
-.hero h1 .amp {
-  display: block !important;
-  font-family: "Darleston" !important;
-  font-size: 42px !important;
-  line-height: 1 !important;
-  letter-spacing: 0 !important;
-  margin: 8px 0 5px !important;
-  position: static !important;
-  top: auto !important;
-}
-
-/* Make the animated leaves softer and more natural */
-.leaf {
-  background: rgba(105, 104, 55, 0.24) !important;
-}
-
-/* Keep the actual invitation above animation */
-.hero,
-.story,
-.countdown,
-.schedule,
-.gallery,
-footer {
-  position: relative;
-  z-index: 1 !important;
-}
-
-/* ── BOTANICAL CORNERS ACROSS THE ENTIRE INVITATION ── */
-
-.botanical-corner {
-  position: fixed;
-  width: clamp(130px, 22vw, 300px);
-  height: auto;
-  z-index: 10;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.92;
-}
-
-.botanical-top-left {
-  top: 8px;
-  left: 8px;
-}
-
-.botanical-top-right {
-  top: 8px;
-  right: 8px;
-}
-
-.botanical-bottom-left {
-  bottom: 8px;
-  left: 8px;
-}
-
-.botanical-bottom-right {
-  bottom: 8px;
-  right: 8px;
-}
-@media (max-width: 600px) {
-  .botanical-corner {
-    width: 30vw;
-    opacity: 0.82;
-  }
-}
-
-/* Smaller corners on phones */
-@media (max-width: 600px) {
-  .botanical-corner {
-    width: 36vw;
-    opacity: 0.82;
-  }
-}
-
-/* Keep invitation text and content above the decorations */
-.hero,
-.story,
-.countdown,
-.schedule,
-.gallery,
-footer {
-  position: relative;
-  z-index: 1;
-}
-/* Restore the original centered vertical scroll animation */
-
-.scroll-hint {
-  position: absolute !important;
-  left: 50% !important;
-  bottom: 1.5rem !important;
-  transform: translateX(-50%) !important;
-  display: block !important;
-  width: 1px !important;
-  height: 4rem !important;
-  margin: 0 !important;
-  z-index: 5 !important;
-}
-
-.scroll-hint span {
-  display: block !important;
-  width: 1px !important;
-  height: 100% !important;
-  background: var(--ink) !important;
-  animation: flow 2.4s ease-in-out infinite !important;
-}
-
-/* Move the complete star-and-dash ornament below the date */
-
-.scroll-hint {
-  bottom: -2rem !important;
-}
-
-/* Keep the vertical animation centered and black */
-.scroll-hint {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  background: transparent !important;
-}
-
-.scroll-hint span {
-  background: #242019 !important;
-}
-
-/* Star-and-dash ornament below the wedding date */
 .date-ornament {
   display: flex;
   align-items: center;
@@ -554,7 +408,7 @@ footer {
   color: #242019;
   width: 10rem;
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 .ornament-line {
@@ -569,82 +423,31 @@ footer {
   line-height: 1;
 }
 
-/* Keep the existing vertical animation centered below the ornament */
-.scroll-hint {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
+/* Hide the vertical scroll line */
 
-/* Remove the animated vertical scroll line */
-.scroll-hint {
-  display: none !important;
-}
-
+.scroll-hint,
 .scroll-hint span {
   display: none !important;
 }
-/* Fix clipped botanical corner artwork */
 
-.botanical-corner {
-  width: clamp(180px, 19vw, 270px) !important;
-  max-width: none !important;
-  height: auto !important;
-  opacity: 0.92;
-}
+/* =========================================================
+   BOTANICAL FRAME
+   Anchored to the full invitation wrapper, not the viewport.
+   ========================================================= */
 
-/* Pull the top corners inward and down */
-.botanical-top-left {
-  top: 12px !important;
-  left: 12px !important;
-}
-
-.botanical-top-right {
-  top: 12px !important;
-  right: 12px !important;
-}
-
-/* Pull the bottom corners inward and up */
-.botanical-bottom-left {
-  bottom: 18px !important;
-  left: 12px !important;
-}
-
-.botanical-bottom-right {
-  bottom: 18px !important;
-  right: 12px !important;
-}
-
-/* Keep all foliage visible on smaller screens */
-@media (max-width: 600px) {
-  .botanical-corner {
-    width: 29vw !important;
-  }
-
-  .botanical-top-left,
-  .botanical-top-right {
-    top: 10px !important;
-  }
-
-  .botanical-bottom-left,
-  .botanical-bottom-right {
-    bottom: 14px !important;
-  }
-}
-
-
-
-/* Four separate corners from the same frame image */
 .botanical-frame {
   position: absolute;
-  width: clamp(150px, 32vw, 440px);
+  width: clamp(150px, 22vw, 320px);
   aspect-ratio: 3 / 2;
   background-image: url("../assets/img/botanical%20frame.png");
   background-repeat: no-repeat;
   background-size: 200% 200%;
   pointer-events: none;
   user-select: none;
-  z-index: 10;
+  z-index: 2;
 }
+
+/* Top-left quarter */
 
 .corner-tl {
   top: 0;
@@ -652,11 +455,15 @@ footer {
   background-position: left top;
 }
 
+/* Top-right quarter */
+
 .corner-tr {
   top: 0;
   right: 0;
   background-position: right top;
 }
+
+/* Bottom-left quarter */
 
 .corner-bl {
   bottom: 0;
@@ -664,32 +471,42 @@ footer {
   background-position: left bottom;
 }
 
+/* Bottom-right quarter */
+
 .corner-br {
   bottom: 0;
   right: 0;
   background-position: right bottom;
 }
 
-/* Mobile sizing */
+/* =========================================================
+   MOBILE ADJUSTMENTS
+   ========================================================= */
+
 @media (max-width: 600px) {
-  .botanical-frame {
-    width: 46vw;
+  .monogram {
+    width: 13rem !important;
+    height: 13rem !important;
   }
-}
 
-/* Keep the old four images hidden */
-.botanical-corner {
-  display: none !important;
-}
+  .monogram-image {
+    width: 13rem !important;
+    height: 13rem !important;
+  }
 
+  .hero h1,
+  .hero-names h1 {
+    font-size: clamp(3.1rem, 10vw, 3.75rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: 0.02em !important;
+  }
 
-/* Hide the four old corner images */
-.botanical-corner {
-  display: none !important;
-}
+  .hero h1 .amp {
+    font-size: 34px !important;
+    margin: 6px 0 4px !important;
+  }
 
-
-/* Hide the four old corner images */
-.botanical-corner {
-  display: none !important;
+  .botanical-frame {
+    width: 36vw;
+  }
 }
