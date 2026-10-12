@@ -104,16 +104,19 @@ body::before {
   overflow: hidden;
 }
 
+
 .leaf {
   position: absolute;
   display: block;
   width: 13px;
   height: 27px;
-  background: rgba(105, 104, 55, 0.24);
+  background: #d4a72c;
   border-radius: 100% 0 100% 0;
   transform-origin: center bottom;
   opacity: 0;
+  box-shadow: 0 0 5px rgba(212, 167, 44, 0.35);
 }
+
 
 .leaf-1 {
   left: 12%;
@@ -152,6 +155,7 @@ body::before {
   height: 18px;
   animation: leafDrift5 27s ease-in-out 10s infinite;
 }
+
 
 @keyframes leafDrift1 {
   0%, 100% {
@@ -510,3 +514,47 @@ body::before {
     width: 36vw;
   }
 }
+
+
+/* Additional golden leaves */
+
+.leaf-6 {
+  left: 35%;
+  top: 35%;
+  width: 10px;
+  height: 22px;
+  animation: leafDrift2 21s ease-in-out 3s infinite;
+}
+
+.leaf-7 {
+  left: 65%;
+  top: 45%;
+  width: 12px;
+  height: 25px;
+  animation: leafDrift3 24s ease-in-out 6s infinite;
+}
+
+.leaf-8 {
+  left: 15%;
+  top: 55%;
+  width: 9px;
+  height: 19px;
+  animation: leafDrift4 19s ease-in-out 9s infinite;
+}
+
+.leaf-9 {
+  left: 88%;
+  top: 78%;
+  width: 11px;
+  height: 23px;
+  animation: leafDrift5 26s ease-in-out 5s infinite;
+}
+
+.leaf-10 {
+  left: 55%;
+  top: 85%;
+  width: 10px;
+  height: 21px;
+  animation: leafDrift1 22s ease-in-out 12s infinite;
+}
+
