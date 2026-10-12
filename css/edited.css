@@ -635,7 +635,7 @@ footer {
 
 /* Four separate corners from the same frame image */
 .botanical-frame {
-  position: fixed;
+  position: absolute;
   width: clamp(150px, 32vw, 440px);
   aspect-ratio: 3 / 2;
   background-image: url("../assets/img/botanical%20frame.png");
