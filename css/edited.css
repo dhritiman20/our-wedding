@@ -557,3 +557,34 @@ body::before {
   height: 21px;
   animation: leafDrift4 22s ease-in-out 12s infinite;
 }
+
+
+/* Make wedding dates larger and bolder */
+.hero .hero-date {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.22em !important;
+  color: #242019 !important;
+}
+
+/* Make the footer date more prominent */
+.footer .footer-date {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  color: #242019 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero .hero-date {
+    font-size: 1.25rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .footer .footer-date {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
