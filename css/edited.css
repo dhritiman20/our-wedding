@@ -581,3 +581,186 @@ body::before {
   animation: leafDrift4 22s ease-in-out 12s infinite;
 }
 
+
+/* =========================================================
+   FLOATING GOLDEN BUTTERFLIES
+   ========================================================= */
+
+.floating-butterflies {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.butterfly {
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 20px;
+  opacity: 0;
+  transform-origin: center;
+}
+
+/* Golden wings */
+
+.butterfly .wing {
+  position: absolute;
+  top: 2px;
+  width: 12px;
+  height: 15px;
+  background: linear-gradient(
+    135deg,
+    #f8df83,
+    #d4a72c 65%,
+    #b88620
+  );
+  box-shadow: 0 0 5px rgba(212, 167, 44, 0.25);
+}
+
+.butterfly .wing-left {
+  left: 0;
+  border-radius: 90% 20% 70% 30%;
+  transform-origin: right center;
+  animation: flutterLeft 0.24s ease-in-out infinite alternate;
+}
+
+.butterfly .wing-right {
+  right: 0;
+  border-radius: 20% 90% 30% 70%;
+  transform-origin: left center;
+  animation: flutterRight 0.24s ease-in-out infinite alternate;
+}
+
+/* Butterfly body and antennae */
+
+.butterfly-body {
+  position: absolute;
+  left: 11px;
+  top: 5px;
+  width: 2px;
+  height: 12px;
+  border-radius: 50%;
+  background: #98701b;
+}
+
+.butterfly-body::before,
+.butterfly-body::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #98701b;
+}
+
+.butterfly-body::before {
+  right: 0;
+  transform: rotate(35deg);
+}
+
+.butterfly-body::after {
+  left: 0;
+  transform: rotate(-35deg);
+}
+
+/* Wing flutter */
+
+@keyframes flutterLeft {
+  from { transform: rotateY(0deg) rotate(-8deg); }
+  to   { transform: rotateY(65deg) rotate(-18deg); }
+}
+
+@keyframes flutterRight {
+  from { transform: rotateY(0deg) rotate(8deg); }
+  to   { transform: rotateY(-65deg) rotate(18deg); }
+}
+
+/* Butterfly 1: gentle diagonal flight */
+
+.butterfly-1 {
+  left: 8%;
+  top: 75%;
+  animation: butterflyFlight1 24s ease-in-out 2s infinite;
+}
+
+/* Butterfly 2: crosses the middle at a different time */
+
+.butterfly-2 {
+  left: 75%;
+  top: 65%;
+  transform: scale(0.8);
+  animation: butterflyFlight2 29s ease-in-out 8s infinite;
+}
+
+/* Butterfly 3: smaller, higher flight */
+
+.butterfly-3 {
+  left: 40%;
+  top: 25%;
+  transform: scale(0.65);
+  animation: butterflyFlight3 32s ease-in-out 14s infinite;
+}
+
+@keyframes butterflyFlight1 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-10deg);
+  }
+  12% { opacity: 0.85; }
+  35% {
+    transform: translate(90px, -65px) rotate(12deg);
+    opacity: 0.9;
+  }
+  65% {
+    transform: translate(190px, -15px) rotate(-8deg);
+    opacity: 0.75;
+  }
+  90% { opacity: 0; }
+}
+
+@keyframes butterflyFlight2 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.8) rotate(10deg);
+  }
+  15% { opacity: 0.8; }
+  40% {
+    transform: translate(-100px, -80px) scale(0.8) rotate(-12deg);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-180px, 20px) scale(0.8) rotate(8deg);
+    opacity: 0.7;
+  }
+  90% { opacity: 0; }
+}
+
+@keyframes butterflyFlight3 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.65) rotate(8deg);
+  }
+  15% { opacity: 0.7; }
+  40% {
+    transform: translate(70px, 60px) scale(0.65) rotate(-12deg);
+    opacity: 0.85;
+  }
+  70% {
+    transform: translate(-50px, 130px) scale(0.65) rotate(10deg);
+    opacity: 0.7;
+  }
+  90% { opacity: 0; }
+}
+
+/* Respect visitors' reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .butterfly,
+  .butterfly .wing {
+    animation: none !important;
+    opacity: 0.65;
+  }
+}
+
