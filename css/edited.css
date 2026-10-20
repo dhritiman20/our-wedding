@@ -523,7 +523,7 @@ body::before {
   top: 35%;
   width: 10px;
   height: 22px;
-  animation: leafDrift2 21s ease-in-out 3s infinite;
+  animation: leafDrift3 21s ease-in-out 3s infinite;
 }
 
 .leaf-7 {
@@ -531,7 +531,7 @@ body::before {
   top: 45%;
   width: 12px;
   height: 25px;
-  animation: leafDrift3 24s ease-in-out 6s infinite;
+  animation: leafDrift5 24s ease-in-out 6s infinite;
 }
 
 .leaf-8 {
@@ -539,7 +539,7 @@ body::before {
   top: 55%;
   width: 9px;
   height: 19px;
-  animation: leafDrift4 19s ease-in-out 9s infinite;
+  animation: leafDrift1 19s ease-in-out 9s infinite;
 }
 
 .leaf-9 {
@@ -547,7 +547,7 @@ body::before {
   top: 78%;
   width: 11px;
   height: 23px;
-  animation: leafDrift5 26s ease-in-out 5s infinite;
+  animation: leafDrift2 26s ease-in-out 5s infinite;
 }
 
 .leaf-10 {
@@ -555,131 +555,5 @@ body::before {
   top: 85%;
   width: 10px;
   height: 21px;
-  animation: leafDrift1 22s ease-in-out 12s infinite;
-}
-
-
-/* More varied drift for the additional golden leaves */
-
-.leaf-6 {
-  animation: leafDrift3 21s ease-in-out 3s infinite;
-}
-
-.leaf-7 {
-  animation: leafDrift5 24s ease-in-out 6s infinite;
-}
-
-.leaf-8 {
-  animation: leafDrift1 19s ease-in-out 9s infinite;
-}
-
-.leaf-9 {
-  animation: leafDrift2 26s ease-in-out 5s infinite;
-}
-
-.leaf-10 {
   animation: leafDrift4 22s ease-in-out 12s infinite;
-}
-
-
-/* =========================================================
-   FLOATING GOLDEN BUTTERFLIES
-   ========================================================= */
-
-
-/* =========================================================
-   FLOATING GOLDEN BUTTERFLIES — IMAGE VERSION
-   ========================================================= */
-
-.floating-butterflies {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.butterfly {
-  position: absolute;
-  display: block;
-  width: 24px;
-  height: 20px;
-  background-image: url("../assets/img/gold-butterfly.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Butterfly 1: faces left and flies left */
-.butterfly-1 {
-  left: 85%;
-  top: 25%;
-  animation: butterflyFlyLeft 24s ease-in-out 2s infinite;
-}
-
-/* Butterfly 2: faces right and flies right */
-.butterfly-2 {
-  left: 8%;
-  top: 55%;
-  animation: butterflyFlyRight 29s ease-in-out 8s infinite;
-}
-
-/* Butterfly 3: faces left and flies left */
-.butterfly-3 {
-  left: 80%;
-  top: 78%;
-  animation: butterflyFlyLeft 32s ease-in-out 14s infinite;
-}
-
-@keyframes butterflyFlyLeft {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) rotate(0deg);
-  }
-  12% {
-    opacity: 0.8;
-  }
-  35% {
-    transform: translate(-80px, -25px) rotate(-5deg);
-    opacity: 0.85;
-  }
-  65% {
-    transform: translate(-180px, 15px) rotate(4deg);
-    opacity: 0.7;
-  }
-  90%, 100% {
-    transform: translate(-230px, -10px) rotate(0deg);
-    opacity: 0;
-  }
-}
-
-@keyframes butterflyFlyRight {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scaleX(-1) rotate(0deg);
-  }
-  12% {
-    opacity: 0.8;
-  }
-  35% {
-    transform: translate(80px, 25px) scaleX(-1) rotate(5deg);
-    opacity: 0.85;
-  }
-  65% {
-    transform: translate(180px, -15px) scaleX(-1) rotate(-4deg);
-    opacity: 0.7;
-  }
-  90%, 100% {
-    transform: translate(230px, 10px) scaleX(-1) rotate(0deg);
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .butterfly {
-    animation: none !important;
-    opacity: 0;
-  }
 }
