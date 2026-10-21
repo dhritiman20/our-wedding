@@ -731,3 +731,12 @@ body.intro-locked {
     transition-duration: 1ms;
   }
 }
+
+
+/* Restore bold wedding dates */
+.hero .hero-date,
+.footer .footer-date {
+  font-weight: 700 !important;
+  color: #242019 !important;
+}
+
