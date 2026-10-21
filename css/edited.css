@@ -702,3 +702,16 @@ body.intro-locked {
     transition-duration: 1ms;
   }
 }
+
+
+/* Make wedding dates bolder */
+.hero .hero-date {
+  font-weight: 700 !important;
+  color: #242019 !important;
+}
+
+.footer .footer-date {
+  font-weight: 700 !important;
+  color: #242019 !important;
+}
+
