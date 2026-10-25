@@ -594,7 +594,7 @@ body.intro-locked {
   z-index: 2;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  transition: transform 950ms cubic-bezier(0.65, 0, 0.25, 1);
+  transition: transform 1350ms cubic-bezier(0.68, 0.02, 0.22, 1);
   will-change: transform;
 }
 
@@ -611,11 +611,11 @@ body.intro-locked {
 }
 
 .intro-screen.is-opening .intro-door-left {
-  transform: rotateY(-105deg);
+  transform: rotateY(-112deg);
 }
 
 .intro-screen.is-opening .intro-door-right {
-  transform: rotateY(105deg);
+  transform: rotateY(112deg);
 }
 
 /* Original dried-flower artwork: only top-right and bottom-left. */
@@ -739,4 +739,3 @@ body.intro-locked {
   font-weight: 700 !important;
   color: #242019 !important;
 }
-
