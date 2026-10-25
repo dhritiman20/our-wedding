@@ -26,14 +26,15 @@
 <body class="intro-locked">
   <!-- Opening screen: click the monogram to open the invitation -->
   <section class="intro-screen" id="intro-screen" aria-label="Open wedding invitation">
-    <div class="intro-door intro-door-left" aria-hidden="true"></div>
-    <div class="intro-door intro-door-right" aria-hidden="true"></div>
-    <img class="intro-botanical corner-tr" src="assets/img/dried-flowers-white-daisies-corner-botanical-frame.png" alt="" aria-hidden="true">
-    <img class="intro-botanical corner-bl" src="assets/img/dried-flowers-white-daisies-corner-botanical-frame.png" alt="" aria-hidden="true">
+    <div class="intro-door intro-door-left" aria-hidden="true">
+      <img class="intro-flower intro-flower-bottom-left" src="assets/img/dried-flowers-white-daisies-corner-botanical-frame.png" alt="">
+    </div>
+    <div class="intro-door intro-door-right" aria-hidden="true">
+      <img class="intro-flower intro-flower-top-right" src="assets/img/dried-flowers-white-daisies-corner-botanical-frame.png" alt="">
+    </div>
     <button class="intro-logo-button" id="open-invitation" type="button" aria-label="Open the wedding invitation">
       <img src="assets/img/KD-approved-transparent-v2.png" alt="KD — click to open the wedding invitation">
     </button>
-    <p class="intro-tap-hint" aria-hidden="true">Tap to open</p>
   </section>
   <!-- Background animations -->
   <div class="ambient-particles" aria-hidden="true"></div>
@@ -147,7 +148,7 @@
         <h2 class="script-title reveal">Our Day...</h2>
 
         <article class="event reveal">
-          <p class="event-time">9 am to 3 pm</p>
+          <p class="event-time">09:00 am onwards</p>
           <h3 class="event-name">Wedding Ceremony</h3>
           <p class="event-venue">Kingkham's Own Residency</p>
           <p class="event-address">
@@ -221,7 +222,7 @@
     <!-- FOOTER: this is the end of the invitation page -->
     <footer class="footer">
       <p class="footer-names">Kingkham &amp; Dhritiman</p>
-      <p class="footer-date">18 . 01 . 2027</p>
+      <p class="footer-date">18 . 01 . 2027 · Silonijan</p>
       <p class="footer-demo">Our Wedding</p>
     </footer>
   </div>
@@ -243,7 +244,7 @@
         window.setTimeout(function () {
           intro.hidden = true;
           document.body.classList.remove("intro-locked");
-        }, 1050);
+        }, 1450);
       });
     }());
   </script>
