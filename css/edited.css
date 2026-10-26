@@ -195,7 +195,7 @@ body.intro-locked { overflow:hidden; }
   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
   width:clamp(130px,20vw,230px); height:clamp(130px,20vw,230px); padding:0; border:0;
   background:transparent; display:flex; align-items:center; justify-content:center;
-  cursor:pointer; z-index:5; -webkit-tap-highlight-color:transparent; transition:opacity 250ms ease, transform 250ms ease;
+  cursor:pointer; z-index:5; -webkit-tap-highlight-color:transparent; transition: opacity 250ms ease; transform 250ms ease;
 }
 .intro-logo-button img { display:block; width:100%; height:100%; object-fit:contain; }
 .intro-tap-hint {
@@ -204,7 +204,9 @@ body.intro-locked { overflow:hidden; }
   font-size:.78rem; font-weight:400; letter-spacing:.18em; text-transform:uppercase;
   white-space:nowrap; pointer-events:none; user-select:none; z-index:5; transition:opacity 250ms ease;
 }
-.intro-logo-button:hover { transform:translate(-50%,-50%) scale(1.035); }
+.intro-logo-button:hover {
+  transform: translate(-50%, -50%);
+}
 .intro-logo-button:focus-visible { outline:2px solid #b79a53; outline-offset:8px; border-radius:50%; }
 .intro-screen.is-opening .intro-logo-button { opacity:0; transform:translate(-50%,-50%) scale(.94); pointer-events:none; }
 .intro-screen.is-opening .intro-tap-hint { opacity:0; }
