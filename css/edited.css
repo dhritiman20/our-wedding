@@ -240,8 +240,8 @@ body.intro-locked { overflow:hidden; }
   }
 }
 
-/* ACTUAL OPENING FLOWERS — match the current index.html classes.
-   These images are children of the door panels, not .intro-screen directly. */
+
+/* Flowers attached to the animated door panels */
 .intro-screen .intro-door img.intro-flower {
   position: absolute !important;
   display: block !important;
@@ -256,6 +256,7 @@ body.intro-locked { overflow:hidden; }
   user-select: none !important;
 }
 
+/* Bottom-left flower follows the left door */
 .intro-screen .intro-door-left img.intro-flower-bottom-left {
   left: 0 !important;
   bottom: 0 !important;
@@ -265,16 +266,14 @@ body.intro-locked { overflow:hidden; }
   transform-origin: bottom left !important;
 }
 
+/* Top-right flower follows the right door */
 .intro-screen .intro-door-right img.intro-flower-top-right {
-  position: absolute !important;
   right: 0 !important;
   top: 0 !important;
   left: auto !important;
   bottom: auto !important;
-  width: clamp(100px, 13vw, 175px) !important;
-  height: auto !important;
   transform: rotate(180deg) !important;
-  transform-origin: top right !important;
+  transform-origin: center center !important;
 }
 
 @media (max-width: 600px) {
@@ -283,23 +282,3 @@ body.intro-locked { overflow:hidden; }
     max-width: 125px !important;
   }
 }
-
-
-/* Fade the corner flowers as the doors open */
-.intro-screen img.intro-botanical {
-  transition: opacity 700ms ease !important;
-  transition-delay: 350ms !important;
-}
-
-.intro-screen.is-opening img.intro-botanical {
-  opacity: 0 !important;
-}
-
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .intro-screen img.intro-botanical {
-    transition-duration: 1ms !important;
-    transition-delay: 0ms !important;
-  }
-}
-
