@@ -283,3 +283,23 @@ body.intro-locked { overflow:hidden; }
     max-width: 125px !important;
   }
 }
+
+
+/* Fade the corner flowers as the doors open */
+.intro-screen img.intro-botanical {
+  transition: opacity 700ms ease !important;
+  transition-delay: 350ms !important;
+}
+
+.intro-screen.is-opening img.intro-botanical {
+  opacity: 0 !important;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen img.intro-botanical {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
