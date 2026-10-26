@@ -206,26 +206,36 @@ body.intro-locked { overflow:hidden; }
 .hero .hero-date, .footer .footer-date { font-weight:700 !important; color:#242019 !important; }
 
 /* FINAL FIX: compact corner flowers, independent of the doors */
+/* Opening screen: small flowers confined to opposite corners */
 .intro-screen img.intro-botanical {
-  position:absolute !important;
-  display:block !important;
-  width:clamp(90px,10vw,145px) !important;
-  max-width:145px !important;
-  height:auto !important;
-  object-fit:contain !important;
-  z-index:4 !important;
-  pointer-events:none !important;
+  position: absolute !important;
+  width: 110px !important;
+  max-width: 18vw !important;
+  height: auto !important;
+  object-fit: contain !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
 }
+
 .intro-screen img.intro-botanical.corner-tr {
-  top:10px !important; right:10px !important; left:auto !important; bottom:auto !important;
-  transform:rotate(180deg) !important; transform-origin:center !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: rotate(180deg) !important;
 }
+
 .intro-screen img.intro-botanical.corner-bl {
-  bottom:10px !important; left:10px !important; right:auto !important; top:auto !important;
-  transform:none !important; transform-origin:center !important;
+  bottom: 12px !important;
+  left: 12px !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
 }
-@media (max-width:600px) {
-  .intro-screen img.intro-botanical { width:clamp(75px,22vw,110px) !important; max-width:110px !important; }
-  .intro-screen img.intro-botanical.corner-tr { top:6px !important; right:6px !important; }
-  .intro-screen img.intro-botanical.corner-bl { bottom:6px !important; left:6px !important; }
+
+@media (max-width: 600px) {
+  .intro-screen img.intro-botanical {
+    width: 85px !important;
+    max-width: 23vw !important;
+  }
 }
