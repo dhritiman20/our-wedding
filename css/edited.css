@@ -739,3 +739,36 @@ body.intro-locked {
   font-weight: 700 !important;
   color: #242019 !important;
 }
+
+
+/* FINAL FLOWER PLACEMENT FIX: compact corner artwork, not oversized panels */
+.intro-screen img.intro-botanical {
+  position: absolute !important;
+  display: block !important;
+  width: clamp(115px, 13vw, 190px) !important;
+  max-width: 190px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+.intro-screen img.intro-botanical.corner-tr {
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: rotate(180deg) !important;
+}
+.intro-screen img.intro-botanical.corner-bl {
+  bottom: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+}
+@media (max-width: 600px) {
+  .intro-screen img.intro-botanical {
+    width: clamp(95px, 25vw, 145px) !important;
+    max-width: 145px !important;
+  }
+}
