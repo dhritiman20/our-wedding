@@ -239,3 +239,44 @@ body.intro-locked { overflow:hidden; }
     max-width: 23vw !important;
   }
 }
+
+/* ACTUAL OPENING FLOWERS — match the current index.html classes.
+   These images are children of the door panels, not .intro-screen directly. */
+.intro-screen .intro-door img.intro-flower {
+  position: absolute !important;
+  display: block !important;
+  width: clamp(100px, 13vw, 175px) !important;
+  max-width: 175px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.intro-screen .intro-door-left img.intro-flower-bottom-left {
+  left: 0 !important;
+  bottom: 0 !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  transform-origin: bottom left !important;
+}
+
+.intro-screen .intro-door-right img.intro-flower-top-right {
+  right: 0 !important;
+  top: 0 !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: rotate(180deg) !important;
+  transform-origin: top right !important;
+}
+
+@media (max-width: 600px) {
+  .intro-screen .intro-door img.intro-flower {
+    width: clamp(78px, 22vw, 125px) !important;
+    max-width: 125px !important;
+  }
+}
