@@ -300,24 +300,31 @@ body.intro-locked { overflow:hidden; }
 
 
 
-/* Pulse the logo image without moving its button */
-@keyframes logoInvitationPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.16); }
-}
 
-@media (hover: hover) and (pointer: fine) {
-  .intro-screen:not(.is-opening) .intro-logo-button:hover img {
-    animation: logoInvitationPulse 1.8s ease-in-out infinite;
+/* Continuous logo pulse — desktop and mobile */
+@keyframes logoInvitationPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
   }
 }
 
+/* Animate the image, not the centred button */
+.intro-screen .intro-logo-button img {
+  animation: logoInvitationPulse 2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Stop pulsing when the invitation opens */
 .intro-screen.is-opening .intro-logo-button img {
   animation: none !important;
 }
 
+/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .intro-screen .intro-logo-button:hover img {
+  .intro-screen .intro-logo-button img {
     animation: none !important;
   }
 }
