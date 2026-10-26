@@ -282,3 +282,47 @@ body.intro-locked { overflow:hidden; }
     max-width: 125px !important;
   }
 }
+
+/* Logo hover: elegant pulse with a subtle vibration */
+.intro-screen .intro-logo-button {
+  transform-origin: center center;
+}
+
+@keyframes logoInvitationPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  18% {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  28% {
+    transform: translate(calc(-50% - 1px), -50%) scale(1.10);
+  }
+  38% {
+    transform: translate(calc(-50% + 1px), -50%) scale(1.12);
+  }
+  48% {
+    transform: translate(-50%, -50%) scale(1.10);
+  }
+  68% {
+    transform: translate(-50%, -50%) scale(1.16);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intro-screen:not(.is-opening) .intro-logo-button:hover {
+    animation: logoInvitationPulse 1.5s ease-in-out infinite;
+  }
+}
+
+/* Keep the opening animation in control when clicked */
+.intro-screen.is-opening .intro-logo-button {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen .intro-logo-button:hover {
+    animation: none !important;
+  }
+}
+
