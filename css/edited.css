@@ -266,10 +266,13 @@ body.intro-locked { overflow:hidden; }
 }
 
 .intro-screen .intro-door-right img.intro-flower-top-right {
+  position: absolute !important;
   right: 0 !important;
   top: 0 !important;
   left: auto !important;
   bottom: auto !important;
+  width: clamp(100px, 13vw, 175px) !important;
+  height: auto !important;
   transform: rotate(180deg) !important;
   transform-origin: top right !important;
 }
