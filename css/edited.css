@@ -299,29 +299,25 @@ body.intro-locked { overflow:hidden; }
 }
 
 
-/* Smooth, centered logo hover */
+
+/* Pulse the logo image without moving its button */
 @keyframes logoInvitationPulse {
-  0%, 100% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.16;
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.16); }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .intro-screen:not(.is-opening) .intro-logo-button:hover {
+  .intro-screen:not(.is-opening) .intro-logo-button:hover img {
     animation: logoInvitationPulse 1.8s ease-in-out infinite;
   }
 }
 
-.intro-screen.is-opening .intro-logo-button {
+.intro-screen.is-opening .intro-logo-button img {
   animation: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-screen .intro-logo-button:hover {
+  .intro-screen .intro-logo-button:hover img {
     animation: none !important;
   }
 }
-
