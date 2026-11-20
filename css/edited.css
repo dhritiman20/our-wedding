@@ -332,8 +332,8 @@ body.intro-locked { overflow:hidden; }
 
 /* =========================================================
    CULTURAL THEME — ASSAMESE + TAI AITON INSPIRED
-   Visual-only overrides. Existing layout and interactions
-   are intentionally preserved.
+   Conservative visual overrides. Existing layout,
+   opening doors, flowers and logo animation are preserved.
    ========================================================= */
 
 :root {
@@ -347,14 +347,14 @@ body.intro-locked { overflow:hidden; }
   --wedding-text: #392b3b;
 }
 
-/* Main invitation palette */
+/* Overall page colour */
 body {
   background-color: var(--wedding-ivory) !important;
-  color: var(--wedding-text);
   background-image:
-    radial-gradient(ellipse at 12% 8%, rgba(222, 190, 235, .22), transparent 38%),
-    radial-gradient(ellipse at 88% 24%, rgba(246, 211, 229, .24), transparent 40%),
+    radial-gradient(ellipse at 12% 8%, rgba(222, 190, 235, .16), transparent 38%),
+    radial-gradient(ellipse at 88% 24%, rgba(246, 211, 229, .18), transparent 40%),
     linear-gradient(135deg, #fbf6f3 0%, #f8eff8 48%, #fbf5f0 100%) !important;
+  color: var(--wedding-text);
 }
 
 body::before {
@@ -362,62 +362,29 @@ body::before {
 }
 
 .invitation-page {
-  background: transparent;
+  background: transparent !important;
 }
 
-/* Fine woven-style accents at the top and bottom of the invitation.
-   These are CSS patterns, not images, so they scale cleanly on mobile. */
+/* Remove the experimental top and bottom woven stripes.
+   The original botanical corner artwork remains unchanged. */
 .invitation-page::before,
 .invitation-page::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 13px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: .72;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 7px,
-      rgba(184, 62, 98, .72) 7px 9px,
-      transparent 9px 15px,
-      rgba(64, 91, 145, .72) 15px 17px,
-      transparent 17px 24px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(101, 48, 120, .10) 0 1px,
-      transparent 1px 4px
-    );
+  content: none !important;
+  display: none !important;
 }
 
-.invitation-page::before {
-  top: 0;
-  border-bottom: 1px solid rgba(101, 48, 120, .18);
-}
-
-.invitation-page::after {
-  bottom: 0;
-  border-top: 1px solid rgba(101, 48, 120, .18);
-}
-
-/* Keep existing botanical corner artwork visible above the background */
+/* Preserve the existing botanical corners */
 .botanical-frame {
   opacity: .88;
 }
 
-/* Main cover and monogram */
+/* Main cover */
 .hero {
-  background: transparent;
+  background: transparent !important;
 }
 
 .hero h1,
-.hero-names h1 {
-  color: var(--wedding-deep-purple) !important;
-}
-
+.hero-names h1,
 .hero .hero-date,
 .footer .footer-date {
   color: var(--wedding-deep-purple) !important;
@@ -428,14 +395,10 @@ body::before {
 }
 
 .ornament-line {
-  background: linear-gradient(
-    90deg,
-    var(--wedding-gamusa-blue),
-    var(--wedding-gamusa-red)
-  );
+  background: linear-gradient(90deg, var(--wedding-gamusa-blue), var(--wedding-gamusa-red));
 }
 
-/* Section headings and supporting copy */
+/* Headings and text */
 .script-title {
   color: var(--wedding-purple);
 }
@@ -448,20 +411,24 @@ body::before {
   color: var(--wedding-text);
 }
 
-/* Subtle panel treatment; preserve the original section geometry */
+/* IMPORTANT: keep all content sections transparent.
+   This removes the white rectangular panels from the previous version. */
 .story,
 .countdown,
 .event,
 .gallery,
-.quote {
-  background-color: rgba(255, 251, 250, .58);
-  border-color: rgba(101, 48, 120, .16);
+.quote,
+.countdown-grid,
+.cd-box {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
-/* Countdown accents */
+/* Countdown: retain typography, remove white tiles */
 .cd-box {
-  border-color: rgba(101, 48, 120, .22);
-  background: rgba(255, 255, 255, .48);
+  border-color: rgba(101, 48, 120, .20);
 }
 
 .cd-num {
@@ -472,7 +439,7 @@ body::before {
   color: var(--wedding-purple);
 }
 
-/* Schedule and location link */
+/* Schedule and location */
 .event-time,
 .event-name {
   color: var(--wedding-deep-purple);
@@ -505,12 +472,12 @@ body::before {
   border-top-color: rgba(101, 48, 120, .22);
 }
 
-/* Opening screen: same door mechanics, updated palette only */
+/* Opening screen: palette only; door geometry and timing untouched */
 .intro-screen,
 .intro-door {
   background-color: #f8eff8 !important;
   background-image:
-    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.36), transparent 70%),
+    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.30), transparent 70%),
     linear-gradient(135deg, #fbf5f2 0%, #f4eaf7 100%) !important;
 }
 
@@ -528,7 +495,7 @@ body::before {
   color: var(--wedding-purple);
 }
 
-/* Small textile-colour detail on interactive accents */
+/* Traditional colour accents */
 .story-claim {
   color: var(--wedding-gamusa-red);
 }
@@ -537,19 +504,18 @@ body::before {
   color: var(--wedding-deep-purple);
 }
 
-/* Mobile: retain the existing layout and reduce decorative density */
+/* Mobile: same transparent section treatment */
 @media (max-width: 600px) {
-  .invitation-page::before,
-  .invitation-page::after {
-    height: 9px;
-    opacity: .58;
-  }
-
   .story,
   .countdown,
   .event,
   .gallery,
-  .quote {
-    background-color: rgba(255, 251, 250, .48);
+  .quote,
+  .countdown-grid,
+  .cd-box {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
   }
 }
