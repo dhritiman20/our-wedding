@@ -534,25 +534,3 @@ body::before {
   background-color: #f8eff8 !important;
   background-image: none !important;
 }
-
-
-/* CULTURAL DETAIL — subtle woven divider beneath section headings.
-   This is an abstract colour-and-weave accent, not a copied sacred motif.
-   It adds no page-edge stripes and does not alter layout or animation. */
-.script-title {
-  padding-bottom: 13px;
-  background-image:
-    linear-gradient(45deg, transparent 41%, rgba(184, 62, 98, .78) 42% 49%, transparent 50%),
-    linear-gradient(-45deg, transparent 41%, rgba(64, 91, 145, .78) 42% 49%, transparent 50%),
-    linear-gradient(90deg, rgba(184, 62, 98, .35), rgba(64, 91, 145, .35), rgba(184, 62, 98, .35));
-  background-size: 160px 9px, 160px 9px, 160px 1px;
-  background-position: center bottom, center bottom, center bottom;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-}
-
-@media (max-width: 600px) {
-  .script-title {
-    padding-bottom: 11px;
-    background-size: 140px 8px, 140px 8px, 140px 1px;
-  }
-}
