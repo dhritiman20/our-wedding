@@ -328,3 +328,9 @@ body.intro-locked { overflow:hidden; }
     animation: none !important;
   }
 }
+/* Align the KD divider with the centre door seam on mobile */
+@media (max-width: 600px) {
+  .intro-screen .intro-logo-button {
+    left: calc(50% - 5px) !important;
+  }
+}
