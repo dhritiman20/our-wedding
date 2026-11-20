@@ -519,3 +519,18 @@ body::before {
     box-shadow: none !important;
   }
 }
+
+
+/* FINAL VISUAL CORRECTIONS
+   Remove the footer separator and make both intro doors use one
+   identical flat colour so there is no gradient mismatch at the seam. */
+.footer {
+  border-top: 0 !important;
+}
+
+.intro-screen,
+.intro-screen .intro-door {
+  background: #f8eff8 !important;
+  background-color: #f8eff8 !important;
+  background-image: none !important;
+}
